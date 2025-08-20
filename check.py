@@ -6,8 +6,8 @@ from typing import Optional
 from concurrent.futures import ThreadPoolExecutor
 
 # 飞书应用凭证
-APP_ID = "cli_a81684b1be3dd00d"
-APP_SECRET = "fdOriivHzMRphwxqVWB4EtapHiPZM1dC"
+APP_ID = "***"
+APP_SECRET = "***"
 
 # 创建线程池执行器用于运行同步IO操作
 executor = ThreadPoolExecutor(max_workers=10)
@@ -15,8 +15,8 @@ executor = ThreadPoolExecutor(max_workers=10)
 async def get_dify_output(message: str) -> Optional[str]:
     loop = asyncio.get_event_loop()
     try:
-        url = "http://172.18.21.15/v1/chat-messages"
-        headers = {"Content-Type": "application/json", "Authorization": "Bearer app-49kkHkHAe8OI2gsdlu5m3OPE"}
+        url = "***"
+        headers = {"Content-Type": "application/json", "Authorization": "***"}
         data = {
             "inputs": {},
             "query": message,
@@ -26,7 +26,7 @@ async def get_dify_output(message: str) -> Optional[str]:
             "files": [{
                 "type": "image",
                 "transfer_method": "remote_url",
-                "url": "https://cloud.dify.ai/logo/logo-site.png"
+                "url": "***"
             }]
         }
         
@@ -43,7 +43,7 @@ async def get_dify_output(message: str) -> Optional[str]:
 async def get_tenant_access_token() -> Optional[str]:
     loop = asyncio.get_event_loop()
     try:
-        url = "https://open.feishu.cn/open-apis/auth/v3/tenant_access_token/internal"
+        url = "***"
         headers = {"Content-Type": "application/json"}
         data = {"app_id": APP_ID, "app_secret": APP_SECRET}
         
@@ -153,4 +153,5 @@ def main():
     cli.start()
 
 if __name__ == "__main__":
+
     main()
